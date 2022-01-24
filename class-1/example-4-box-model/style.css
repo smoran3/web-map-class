@@ -4,4 +4,8 @@ p {
 }
 #extra-box {
   background-color: red;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 50vw;
 }

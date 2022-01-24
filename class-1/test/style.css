@@ -1,0 +1,24 @@
+body {
+  background-color: black;
+}
+p {
+  color: teal;
+  font-family: "Montserrat", sans-serif;
+}
+.style-a {
+  color: teal;
+  font-family: "Montserrat", sans-serif;
+  font-size: 200;
+}
+.style-b {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-size: 225;
+}
+#extra-box {
+  position: fixed;
+  left: 10px;
+  top: 75px;
+  width: 200px;
+  border: white 2px solid;
+}
