@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+#title {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  background-color: whitesmoke;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border: #95a5a6 2px solid;
+  border-radius: 5px;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+}
+#legend {
+  position: fixed;
+  left: 10px;
+  bottom: 35px;
+  background-color: whitesmoke;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border: #95a5a6 2px solid;
+  border-radius: 5px;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+}
+img {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  left: 10px;
+  top: 65px;
+  background-color: whitesmoke;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 2px;
+  padding-right: 2px;
+  border: #95a5a6 2px solid;
+  border-radius: 5px;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+}
+.a {
+  object-fit: contain;
+}
+
+h1 {
+  color: black;
+  font-family: "Play", sans-serif;
+  font-size: medium;
+}
+h4 {
+  color: black;
+  font-family: "Play", sans-serif;
+  font-size: small;
+}
+p {
+  color: black;
+  font-family: "Roboto", sans-serif;
+  font-size: small;
+}
