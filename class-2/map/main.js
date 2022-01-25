@@ -28,9 +28,9 @@ map.on("load", () => {
   for (const layer in layers) map.addLayer(layers[layer]);
 });
 
-map.on("click", (event) => {
+map.on("click", "plan", (event) => {
   const features = map.queryRenderedFeatures(event.point, {
-    layers: ["chicago-parks"],
+    layers: ["plan"],
   });
   if (!features.length) {
     return;
@@ -40,7 +40,14 @@ map.on("click", (event) => {
   const popup = new mapboxgl.Popup({ offset: [0, -15] })
     .setLngLat(feature.geometry.coordinates)
     .setHTML(
-      `<h3>${feature.properties.title}</h3><p>${feature.properties.description}</p>`
+      `<h3>${feature.properties.Year}</h3><p>${feature.properties.Year}</p>`
     )
     .addTo(map);
+});
+
+map.on("mouseenter", "plan", () => {
+  map.getCanvas().style.cursor = "pointer";
+});
+map.on("mouseleave", "plan", () => {
+  map.getCanvas().style.cursor = "";
 });
