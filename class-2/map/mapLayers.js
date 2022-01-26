@@ -14,13 +14,13 @@ const layers = {
         "2022",
         "#27AE60 ", //green
         "2023",
-        "#F39C12",
+        "#F39C12", //orange
         "2024",
-        "red",
+        "red", //red
         "2025",
-        "#A569BD",
+        "#A569BD", //purple
         "2026",
-        "#3498DB",
+        "#3498DB", //blue
         "gray",
       ],
     },

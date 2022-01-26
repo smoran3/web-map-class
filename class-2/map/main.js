@@ -13,6 +13,7 @@ const map = new mapboxgl.Map({
   zoom: 9.5,
 });
 
+//add geocoder/search bar using mapbox defaults
 map.addControl(
   new MapboxGeocoder({
     accessToken: mapboxgl.accessToken,
@@ -21,6 +22,9 @@ map.addControl(
   })
 );
 
+//add mabox standard navigation controls; zoom in/out and rotate
+map.addControl(new mapboxgl.NavigationControl());
+
 map.on("load", () => {
   //load sources
   for (const source in sources) map.addSource(source, sources[source]);
@@ -28,26 +32,17 @@ map.on("load", () => {
   for (const layer in layers) map.addLayer(layers[layer]);
 });
 
-map.on("click", "plan", (event) => {
-  const features = map.queryRenderedFeatures(event.point, {
-    layers: ["plan"],
-  });
-  if (!features.length) {
-    return;
-  }
-  const feature = features[0];
-
-  const popup = new mapboxgl.Popup({ offset: [0, -15] })
-    .setLngLat(feature.geometry.coordinates)
-    .setHTML(
-      `<h3>${feature.properties.Year}</h3><p>${feature.properties.Year}</p>`
-    )
-    .addTo(map);
-});
-
-map.on("mouseenter", "plan", () => {
+//popups
+map.on("mouseenter", "planned-segments", () => {
   map.getCanvas().style.cursor = "pointer";
 });
-map.on("mouseleave", "plan", () => {
+map.on("mouseleave", "planned-segments", () => {
   map.getCanvas().style.cursor = "";
+});
+
+map.on("click", "planned-segments", (e) => {
+  const coordinates = e.features[0].geometry.coordinates.slide();
+  const description = e.features[0].properties.description;
+
+  new mapboxgl.Popup().setLngLat(coordinates).setHTML("<p>test</p>").addTo(map);
 });
